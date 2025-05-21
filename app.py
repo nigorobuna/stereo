@@ -18,3 +18,16 @@ st.title("シンプルなデプロイテストアプリ 🚀")
 
 # まだ plot_dynamic_stereographic_projection は呼び出さない
 st.info("ステップ1：描画関数の定義を追加しました。まだ呼び出していません。")
+
+# app.py (ステップ2の状態。ステップ1のコードに続けて...)
+
+# ... (st.info(...) の後など) ...
+st.header("固定値でのプロットテスト")
+try:
+    # 固定値で描画関数を呼び出す
+    fig_test_plot = plot_dynamic_stereographic_projection(0, 0, 1) # 例えば[001]でテスト
+    st.pyplot(fig_test_plot)
+    st.success("[001]中心のプロットテスト（固定値）成功！")
+except Exception as e_plot:
+    st.error("固定値でのプロット中にエラーが発生しました。")
+    st.exception(e_plot) # エラーの詳細を表示
